@@ -5,7 +5,6 @@
  ************************************/
 
 @import "_variables";
-@import "_fonts";
 
 /**
  * LAYOUT
@@ -24,4 +23,9 @@
  * VIEWS
  */
 
-@import "views/home";
+@import "views/recordDateTime";
+
+/**
+ * Common
+ */
+@import "common/common"

@@ -1,0 +1,15 @@
+<ion-view view-title="Car List">
+    <ion-nav-buttons side="left">
+        <button menu-toggle class="button button-icon icon ion-navicon" ng-show="carListCtrl.isShowToggle()">
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-calm" ng-click="carListCtrl.addCar()">
+            Add Car
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="list">
+        </div>
+    </ion-content>
+</ion-view>

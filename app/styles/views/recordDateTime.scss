@@ -1,0 +1,32 @@
+.header {}
+
+.buttons {
+    .md-icon-button {
+        width: auto;
+        height: auto;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+}
+
+.timer-area {
+    top: 44px;
+    padding: 5px;
+}
+
+.content {
+    padding: 1rem;
+    background: $bgColor_dark;
+    color: $textColor_white;
+}
+
+.time-clock {
+    font-size: 4rem;
+    line-height: 5rem;
+}
+
+.dark-bg {
+    background: $bgColor_dark;
+}

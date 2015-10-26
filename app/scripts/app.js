@@ -12,52 +12,39 @@
 
 angular.module('Recordtime', ['ionic', 'ngCordova', 'ngResource'])
 
-  .run(function($ionicPlatform) {
+.run(function($ionicPlatform) {
 
-    $ionicPlatform.ready(function() {
-      // save to use plugins here
-    });
+    $ionicPlatform.ready(function() {});
 
-    // add possible global event handlers here
+})
 
-  })
+.config(function($httpProvider, $stateProvider, $urlRouterProvider) {
 
-  .config(function($httpProvider, $stateProvider, $urlRouterProvider) {
-    // register $http interceptors, if any. e.g.
-    // $httpProvider.interceptors.push('interceptor-name');
-
-    // Application routing
     $stateProvider
-      .state('app', {
-        url: '/app',
-        abstract: true,
-        templateUrl: 'templates/main.html',
-        controller: 'MainController'
-      })
-      .state('app.home', {
-        url: '/home',
-        cache: true,
-        views: {
-          'viewContent': {
-            templateUrl: 'templates/views/home.html',
-            controller: 'HomeController'
-          }
-        }
-      })
-      .state('app.settings', {
-        url: '/settings',
-        cache: true,
-        views: {
-          'viewContent': {
-            templateUrl: 'templates/views/settings.html',
-            controller: 'SettingsController'
-          }
-        }
-      });
+        .state('app', {
+            url: '/app',
+            abstract: true,
+            templateUrl: 'templates/main.html',
+            controller: 'MainController'
+        })
+        .state('app.recordDateTime', {
+            url: '/recordDateTime',
+            views: {
+                'viewContent': {
+                    templateUrl: 'templates/views/recordDateTime.html',
+                    controller: 'RecordDateTimeController as recordCtrl'
+                }
+            }
+        })
+        .state('app.carList', {
+            url: '/carList',
+            views: {
+                'viewContent': {
+                    templateUrl: 'templates/views/carList.html',
+                    controller: 'CarListController as carListCtrl'
+                }
+            }
+        });
 
-
-    // redirects to default route for undefined routes
-    $urlRouterProvider.otherwise('/app/home');
-  });
-
-
+    $urlRouterProvider.otherwise('/app/recordDateTime');
+});
